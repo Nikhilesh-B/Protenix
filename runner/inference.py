@@ -163,7 +163,8 @@ class InferenceRunner(object):
 
 
 def download_infercence_cache(configs: Any, model_version: str = "v0.2.0") -> None:
-
+    # this is downloading the data cache for CCD_components and CCD_components_rdkit_mol_file, what their purpose is not yet clear 
+    # the CCD files are needed for the json_parser.py file that understands what is being passed into the model
     for cache_name in ("ccd_components_file", "ccd_components_rdkit_mol_file"):
         cur_cache_fpath = configs["data"][cache_name]
         if not opexists(cur_cache_fpath):
